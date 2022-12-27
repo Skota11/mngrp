@@ -61,7 +61,9 @@ p {
   font-size: 1em;
   outline: none;
   width: 90%;
-  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #send-button i {
