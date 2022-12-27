@@ -63,6 +63,7 @@ p {
   outline: none;
   width: 90%;
   margin: auto;
+  padding: 1em 0;
 }
 
 #send-button i {
