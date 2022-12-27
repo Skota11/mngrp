@@ -169,7 +169,7 @@ document.body.oncontextmenu = function () { return false; }
 function onrightclick(e) {
   const username = document.getElementById(e + "_username").textContent;
   const msg = document.getElementById(e + "_content").textContent;
-  document.getElementById("reply-menu").innerHTML = `<div><ul><li>${username}</li><li>${msg}</li></ul><button id="${e}_replyright" onclick="makereply('${e}')">返信</button><button id="${e}_replyright" onclick="ctc('${username} : ${msg}')">コピー</button></div>`;
+  document.getElementById("reply-menu").innerHTML = `<div><ul><li>${username}</li><li>${msg}</li></ul><p><button id="${e}_replyright" onclick="makereply('${e}')">返信</button><button id="${e}_replyright" onclick="ctc('${username} : ${msg}')">コピー</button></p></div>`;
   return false;
 };
 function onreplybutton(id) {
