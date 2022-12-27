@@ -47,6 +47,7 @@ function key_event(e) {
           reply_mode = false;
           document.getElementById("reply-show").innerHTML = ""
           document.getElementById("reply-show").innerHTML = ""
+          document.getElementById("content").innerHTML = ""
             return e.preventDefault()
         } else {
           socket.emit("newmsg", document.getElementById("content").textContent)
