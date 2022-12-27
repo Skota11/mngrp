@@ -80,6 +80,8 @@ function keydownEvent(event) {
         return false;
       }
     }
+  }else if (event.code = "Key/") {
+    document.getElementById('content').focus();
   }
 }
 
