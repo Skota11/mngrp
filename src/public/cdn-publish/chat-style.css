@@ -1,0 +1,241 @@
+* {
+  font-family: 'Noto Sans JP', sans-serif;
+  overflow-wrap: break-word;
+}
+
+body {
+  margin: 0;
+}
+
+#header {
+  background-color: #3b469b;
+  height: auto;
+  width: auto;
+}
+
+#header h2 {
+  display: inline-block;
+}
+
+#header span {
+  color: rgb(255, 255, 255);
+  float: right;
+}
+
+#header h2 a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+
+p {
+  margin-top: 0;
+}
+
+.online-member {
+  float: right;
+  width: 20%;
+  height: 100vh;
+  background-color: gainsboro;
+}
+
+#msgsend {
+  width: 80%;
+  position: absolute;
+  /*←絶対位置*/
+  bottom: 0;
+  /*下に固定*/
+}
+
+#typenow {
+  height: 1.5em;
+}
+
+#input_box {
+  height: 2em;
+  border-radius: 0.5em;
+  width: 100%;
+  display: inline-block;
+  background-color: gainsboro;
+}
+#content {
+  font-size: 1em;
+  outline: none;
+  width: 90%;
+  margin: auto;
+}
+
+#send-button i {
+  font-size: 2em;
+}
+
+#msglist {
+  height: 85vh;
+  overflow: scroll;
+}
+
+#nowlogin {
+  font-size: 1.2em;
+}
+
+.msg {
+  margin-left: 15px;
+  transition: background-color .3s;
+  margin-bottom: 1em;
+}
+
+.msg:hover {
+  background-color: gainsboro;
+}
+
+.username {
+  font-size: 1.2em;
+}
+
+.m_emoji {
+  background-color: #3b469b;
+  color: white;
+}
+
+.nowdate {
+  font-size: 0.6em;
+  color: gainsboro;
+}
+
+.status_name {
+  font-size: 1.2em;
+}
+
+.status {
+  font-size: 0.8em;
+}
+
+.content {
+  font-size: 1em;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  list-style: none;
+}
+
+.msg_ul {
+  padding-left: 40px;
+}
+
+.msg_ul li {
+  margin: 0;
+  line-height: 0;
+}
+
+#contextmenu {
+  display: none;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 200px;
+  height: 100px;
+  border: 1px solid #000;
+  background-color: #fff;
+}
+
+#contextmenu li {
+  cursor: pointer;
+}
+
+/*アコーディオン全体*/
+.accordion-area {
+  list-style: none;
+  width: 96%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.accordion-area li {
+  margin: 10px 0;
+}
+
+.accordion-area section {
+  border: 1px solid #ccc;
+}
+
+/*アコーディオンタイトル*/
+.title {
+  position: relative;
+  /*+マークの位置基準とするためrelative指定*/
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: normal;
+  padding: 3% 3% 3% 50px;
+  transition: all .5s ease;
+}
+
+/*アイコンの＋と×*/
+.title::before,
+.title::after {
+  position: absolute;
+  content: '';
+  width: 15px;
+  height: 2px;
+  background-color: #333;
+
+}
+
+.title::before {
+  top: 48%;
+  left: 15px;
+  transform: rotate(0deg);
+
+}
+
+.title::after {
+  top: 48%;
+  left: 15px;
+  transform: rotate(90deg);
+
+}
+
+/*　closeというクラスがついたら形状変化　*/
+.title.close::before {
+  transform: rotate(45deg);
+}
+
+.title.close::after {
+  transform: rotate(-45deg);
+}
+
+/*アコーディオンで現れるエリア*/
+.box {
+  display: none;
+  /*はじめは非表示*/
+  background: #f3f3f3;
+  margin: 0 3% 3% 3%;
+  padding: 3%;
+}
+
+.hide-area {
+  display: none;
+}
+
+.info {
+  color: black;
+}
+
+.userimg {
+  border-radius: 10px;
+  border: 3px solid #636363;
+  height: 3em;
+  width: 3em;
+  object-fit: cover;
+  margin: auto;
+}
+#reply-menu {
+  width: auto;
+}
+img.emoji {
+  height: 1em;
+  width: 1em;
+  margin: 0 .05em 0 .1em;
+  vertical-align: -0.1em;
+}

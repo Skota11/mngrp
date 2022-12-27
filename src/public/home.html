@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Mongrop - Home</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap');
+    </style>
+    <link rel="stylesheet" href="https://cdn.mngrp.skota11.com/home-style.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/Modaal/0.4.4/css/modaal.min.css">
+</head>
+
+<body>
+    <main>
+    <h1>ホーム</h1>
+    <div class="top-user"><p><img id="myicon" src="" alt="myicon"></p><p><span id="my-displayname"></span><span id="my-name"></span><p><a
+        href="/acount/settings" class="btn">アカウント設定</a></p><p>(<a href="#info-1" class="info">名前の変更</a>)</p></div>
+    <hr>
+    <h2>リアルタイムチャット</h2>
+    <p>参加中のメンバー<button onclick="reloadlogin()"><i class="fa-solid fa-rotate-right"></i></button></p>
+    <p id="chat-nowlogin">|</p>
+    <p><a href="/chat" class="btn">チャットへ行く</a></p>
+    <hr>
+    <h2>ボード</h2>
+    <p><a href="/board" class="btn">ボードへ行く</a></p>
+    <hr>
+    <h2>検索</h2>
+</main>
+<section id="info-1" class="hide-area">
+    <h2>名前の変更</h2>
+    <p><input id="changename" type="text"><button onclick="changename()">名前を変更</button></p>
+    <p id="res-1"></p>
+</section>
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Modaal/0.4.4/js/modaal.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://kit.fontawesome.com/a60744fb42.js" crossorigin="anonymous"></script>
+<script src="https://cdn.mngrp.skota11.com/home.js"></script>
+<script>
+    $(".info").modaal({
+        overlay_close: true,//モーダル背景クリック時に閉じるか
+        before_open: function () {// モーダルが開く前に行う動作
+            $('html').css('overflow-y', 'hidden');/*縦スクロールバーを出さない*/
+        },
+        after_close: function () {// モーダルが閉じた後に行う動作
+            $('html').css('overflow-y', 'scroll');/*縦スクロールバーを出す*/
+        }
+    });
+    function changename() {
+        const newname = document.getElementById("changename").value
+        console.log(newname)
+        const param = {
+            method: "POST",
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                name: newname
+            })
+        }
+        fetch("/api/acount/changename", param).then((res) => {
+            res.text().then((text) => {
+                swal("名前を変更しました","変更を適用するには、リロードしてください","success");
+            })
+        })
+    }
+</script>
+
+</html>
