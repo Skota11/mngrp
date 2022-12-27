@@ -81,7 +81,12 @@ function keydownEvent(event) {
       }
     }
   }else if (event.code = "Key/") {
-    document.getElementById('content').focus();
+    const activeTextarea = document.activeElement;
+    const contentElement = document.getElementById('content');
+    if (activeTextarea !== contentElement) {
+      contentElement.focus();
+      contentElement.innerHTML = "" 
+    }
   }
 }
 
