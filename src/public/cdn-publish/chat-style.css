@@ -58,12 +58,11 @@ p {
   background-color: gainsboro;
 }
 #content {
+  position: absolute;
   font-size: 1em;
   outline: none;
   width: 90%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin: auto;
 }
 
 #send-button i {
