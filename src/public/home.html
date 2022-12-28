@@ -32,8 +32,12 @@
 </main>
 <section id="info-1" class="hide-area">
     <h2>名前の変更</h2>
-    <p><input id="changename" type="text"><button onclick="changename()">名前を変更</button></p>
-    <p id="res-1"></p>
+    <div class="group">
+        <input required="" id="changename" type="text" class="input">
+        <span class="bar"></span>
+        <label>名前</label>
+      </div>
+    <p><button onclick="changename()">名前を変更</button></p>
 </section>
 </body>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"
