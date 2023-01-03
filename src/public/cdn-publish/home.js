@@ -32,10 +32,12 @@ fetch("/api/chat/nowlogin").then((res) => {
                 displayname = text.name
                 username = text.username
                 imageurl = text.imageurl
+                info = text.info;
         
                 document.getElementById("myicon").src = imageurl
                 document.getElementById("my-displayname").textContent = displayname
                 document.getElementById("my-name").textContent = "@"+username
+                document.getElementById("user_info_textarea").value = info
                 document.getElementById("main").style.display = "inline"
                 document.getElementById("loading").style.display = "none";
             })
