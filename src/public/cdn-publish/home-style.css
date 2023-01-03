@@ -30,6 +30,9 @@
     width: fit-content;
     display: flex;
 }
+#user_info {
+  margin-left: 10%;
+}
 main{
     width: 80%;
     margin: auto;
