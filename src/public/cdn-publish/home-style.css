@@ -276,3 +276,11 @@ button {
 #user_info_textarea {
   height: 16em;
 }
+textarea{
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid #e5e5e5;
+  outline: none;
+  line-height: 1.6;
+  resize: vertical;
+}
