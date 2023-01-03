@@ -273,4 +273,5 @@ button {
 }
 #user_info {
   display: block;
+  width: fit-content;
 }
