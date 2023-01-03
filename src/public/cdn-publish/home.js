@@ -37,6 +37,7 @@ fetch("/api/chat/nowlogin").then((res) => {
                 document.getElementById("my-displayname").textContent = displayname
                 document.getElementById("my-name").textContent = "@"+username
                 document.getElementById("main").style.display = "inline"
+                document.getElementById("loading").style.display = "none";
             })
         })
     })
