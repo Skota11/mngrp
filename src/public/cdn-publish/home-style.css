@@ -263,3 +263,7 @@ button {
   right: 15%;
   animation-delay: .3s;
 }
+#user_name {
+  display: block;
+  float: left;
+}

@@ -18,8 +18,17 @@
     <div style="display: none;" id="main">
         <main>
     <h1>ホーム</h1>
-    <div class="top-user"><p><img id="myicon" src="" alt="myicon"></p><p><span id="my-displayname"></span><span id="my-name"></span><p><a
-        href="/acount/settings" class="btn">アカウント設定</a></p><p>(<a href="#info-1" class="info">名前の変更</a>)</p></div>
+    <div class="top-user">
+        <div id="user_name">
+            <p><img id="myicon" src="" alt="myicon"></p>
+        <p><span id="my-displayname"></span><span id="my-name"></span></p>
+        <p><a href="/acount/settings" class="btn">アカウント設定</a></p>
+        <p>(<a href="#info-1" class="info">名前の変更</a>)</p>
+        </div>
+        <div id="user_info">
+            <textarea id="user_info_textarea" cols="30" rows="5"></textarea>
+        </div>
+    </div>
     <hr>
     <h2>リアルタイムチャット</h2>
     <p>参加中のメンバー<button onclick="reloadlogin()"><i class="fa-solid fa-rotate-right"></i></button></p>
