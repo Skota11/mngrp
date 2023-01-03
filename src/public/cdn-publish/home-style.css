@@ -29,6 +29,8 @@
     text-align: center;
     width: fit-content;
     display: flex;
+    flex-wrap: wrap;
+    gap: 0 40px;
 }
 main{
     width: 80%;
@@ -265,13 +267,9 @@ button {
   animation-delay: .3s;
 }
 #user_name {
-  display: gap;
   float: left;
   width: fit-content;
-  gap: 0 0 0 10%;
 }
 #user_info {
-  display: gap;
   width: fit-content;
-  gap: 0 0 0 10%;
 }
