@@ -32,14 +32,15 @@ router.get("/acount", (req, ex_res) => {
                 client.query(query2).then((res: {
                     rows: {
                         name: any;
-                        imgurl: any; joindate: any;
+                        imgurl: any; joindate: any;introduction: any;
                     }[];
                 }) => {
                     ex_res.json({
                         username: value,
                         name: res.rows[0].name,
                         imageurl: res.rows[0].imgurl,
-                        joindate: res.rows[0].joindate
+                        joindate: res.rows[0].joindate,
+                        info:res.rows[0].introduction
                     });
                 })
             }
@@ -95,6 +96,33 @@ router.post("/acount/changeimage", (req, ex_res) => {
                     .query(query2)
                     .then((res: any) => {
                         ex_res.send("画像を変更しました")
+                    })
+            }
+        })
+        .catch((e: { stack: any; }) => console.error(e.stack));
+})
+router.post("/acount/changeimage", (req, ex_res) => {
+    const name = req.body.info;
+    const ac = req.cookies.ac_;
+    const query1 = {
+        text: "SELECT * FROM pwd where ac = $1",
+        values: [ac]
+    };
+    client
+        .query(query1)
+        .then((res: { rows: string | any[]; }) => {
+            if (res.rows.length == 0) {
+                ex_res.send("error")
+            } else {
+                let value = res.rows[0].username;
+                const query2 = {
+                    text: "UPDATE acount set introduction = $1 where username = $2",
+                    values: [name, value]
+                };
+                client
+                    .query(query2)
+                    .then((res: any) => {
+                        ex_res.send("説明を変更しました")
                     })
             }
         })
