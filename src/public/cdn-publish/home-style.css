@@ -28,6 +28,7 @@
     margin: 8vh 0 8vh 0;
     text-align: center;
     width: fit-content;
+    display: flex;
 }
 main{
     width: 80%;
@@ -266,4 +267,7 @@ button {
 #user_name {
   display: block;
   float: left;
+}
+#user_info {
+  display: block;
 }
