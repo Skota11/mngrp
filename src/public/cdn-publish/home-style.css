@@ -265,11 +265,13 @@ button {
   animation-delay: .3s;
 }
 #user_name {
-  display: block;
+  display: gap;
   float: left;
   width: fit-content;
+  gap: 0 0 0 10%;
 }
 #user_info {
-  display: block;
+  display: gap;
   width: fit-content;
+  gap: 0 0 0 10%;
 }
