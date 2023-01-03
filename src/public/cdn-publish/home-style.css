@@ -1,5 +1,5 @@
 @media screen and (max-width: 480px) {
-	#main{
+	main{
         width: 100%;
     }
 }
@@ -29,7 +29,7 @@
     text-align: center;
     width: fit-content;
 }
-#main{
+main{
     width: 80%;
     margin: auto;
 }
