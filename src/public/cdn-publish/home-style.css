@@ -270,6 +270,7 @@ button {
 #user_name {
   display: block;
   float: left;
+  width: fit-content;
 }
 #user_info {
   display: block;
