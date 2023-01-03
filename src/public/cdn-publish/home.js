@@ -70,6 +70,24 @@ function changename() {
         })
     })
 }
+function changeinfo() {
+    const newname = document.getElementById("user_info_textarea").value
+    const param = {
+        method: "POST",
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            info: newname
+        })
+    }
+    fetch("/api/acount/changename", param).then((res) => {
+        res.text().then((text) => {
+            swal("説明を変更しました","変更を適用するには、リロードしてください","success");
+        })
+    })
+}
 function reloadlogin() {
     document.querySelector("#chat-nowlogin").innerHTML = "|"
     fetch("/api/chat/nowlogin").then((res) => {
@@ -114,4 +132,7 @@ function getcookie(name) {
   }
   if (getcookie("ac_") == null) {
     location.href = "/login?q="
+  }
+  function info_btn() {
+    document.getElementById("change_btn").style.display = "block";
   }

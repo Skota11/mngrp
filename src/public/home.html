@@ -26,7 +26,8 @@
         <p>(<a href="#info-1" class="info">名前の変更</a>)</p>
         </div>
         <div id="user_info">
-            <textarea id="user_info_textarea" cols="30" rows="5"></textarea>
+            <textarea onchange="info_btn()" id="user_info_textarea" cols="30" rows="5"></textarea>
+            <button onclick="changeinfo()" style="display: none;" id="change_btn">説明を変更</button>
         </div>
     </div>
     <hr>
