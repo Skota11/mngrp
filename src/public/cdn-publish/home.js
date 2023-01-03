@@ -82,7 +82,7 @@ function changeinfo() {
             info: newname
         })
     }
-    fetch("/api/acount/changename", param).then((res) => {
+    fetch("/api/acount/changeinfo", param).then((res) => {
         res.text().then((text) => {
             swal("説明を変更しました","変更を適用するには、リロードしてください","success");
         })

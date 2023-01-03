@@ -101,7 +101,7 @@ router.post("/acount/changeimage", (req, ex_res) => {
         })
         .catch((e: { stack: any; }) => console.error(e.stack));
 })
-router.post("/acount/changeimage", (req, ex_res) => {
+router.post("/acount/changeinfo", (req, ex_res) => {
     const name = req.body.info;
     const ac = req.cookies.ac_;
     const query1 = {
