@@ -1,17 +1,6 @@
 let displayname;
 let username;
 let imageurl;
-fetch("/api/acount").then((res) => {
-    res.json().then((text) => {
-        displayname = text.name
-        username = text.username
-        imageurl = text.imageurl
-
-        document.getElementById("myicon").src = imageurl
-        document.getElementById("my-displayname").textContent = displayname
-        document.getElementById("my-name").textContent = "@"+username
-    })
-})
 fetch("/api/chat/nowlogin").then((res) => {
     res.json().then((text) => {
         if (text.nowlogin.length == 0) {
@@ -38,6 +27,18 @@ fetch("/api/chat/nowlogin").then((res) => {
             content_div.innerHTML = `<span>//更新:${Hour}:${Minute}</span>`
             list.appendChild(content_div, list.firstChild);   
         }
+        fetch("/api/acount").then((res) => {
+            res.json().then((text) => {
+                displayname = text.name
+                username = text.username
+                imageurl = text.imageurl
+        
+                document.getElementById("myicon").src = imageurl
+                document.getElementById("my-displayname").textContent = displayname
+                document.getElementById("my-name").textContent = "@"+username
+                document.getElementById("main").style.display = "inline"
+            })
+        })
     })
 })
 $(".info").modaal({

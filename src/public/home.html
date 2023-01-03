@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <main>
+    <div style="display: none;" id="main">
     <h1>ホーム</h1>
     <div class="top-user"><p><img id="myicon" src="" alt="myicon"></p><p><span id="my-displayname"></span><span id="my-name"></span><p><a
         href="/acount/settings" class="btn">アカウント設定</a></p><p>(<a href="#info-1" class="info">名前の変更</a>)</p></div>
@@ -29,7 +29,17 @@
     <p><a href="/board" class="btn">ボードへ行く</a></p>
     <hr>
     <h2>検索</h2>
-</main>
+    </div>
+    <div id="loading">
+        <div class="wrapper">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="shadow"></div>
+            <div class="shadow"></div>
+            <div class="shadow"></div>
+        </div>
+    </div>
 <section id="info-1" class="hide-area">
     <h2>名前の変更</h2>
     <div class="group">
