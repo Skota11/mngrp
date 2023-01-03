@@ -273,3 +273,6 @@ button {
 #user_info {
   width: fit-content;
 }
+#user_info_textarea {
+  height: 16em;
+}
