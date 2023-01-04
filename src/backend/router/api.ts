@@ -5,7 +5,7 @@ require('dotenv').config();
 const db_host = process.env.host;
 const db_pwd = process.env.password;
 const client = new Client({
-    user: "fast",
+    user: "fasted",
     host: db_host,
     database: "user_xxdb",
     password: db_pwd,

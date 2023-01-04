@@ -10,7 +10,7 @@ const db_pwd = process.env.password;
 const app = express();
 const { Client } = require("pg");
 const client = new Client({
-  user: "fast",
+  user: "fasted",
   host: db_host,
   database: "user_xxdb",
   password: db_pwd,
