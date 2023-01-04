@@ -11,7 +11,7 @@ const app = express();
 const { Client } = require("pg");
 const client = new Client({
   user: "fasted",
-  host: db_host,
+  host: "127.0.0.1",
   database: "user_xxdb",
   password: db_pwd,
   port: 5432,

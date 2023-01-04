@@ -8,7 +8,7 @@ const db_host = process.env.host;
 const db_pwd = process.env.password;
 const client = new Client({
   user: "fasted",
-  host: db_host,
+  host: "127.0.0.1",
   database: "user_xxdb",
   password: db_pwd,
   port: 5432,
