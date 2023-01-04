@@ -10,7 +10,7 @@ const client = new Client({
     database: "user_xxdb",
     password: db_pwd,
     port: 5432,
-    ssl: true
+    ssl: false
   });
 client.connect();
 router.get("/acount", (req, ex_res) => {
