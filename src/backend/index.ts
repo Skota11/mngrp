@@ -54,6 +54,17 @@ app.get("/api/chat/nowlogin", (req, ex_res) => {
     nowlogin: nowlogin
   })
 })
+//log処理
+function newlog(name:string , imgurl:string , content:string) {
+  const data = {username: name , avatar_url:imgurl , content:content}
+  fetch('https://discord.com/api/webhooks/1060499653562482708/HkcSsAw5dwKQ1QqTUUoGElOj9zNT87pQu6Rn6QXdTMDXa5SfTUZcFj22GUnSESDlPDEo"', {  // 送信先URL
+		method: 'post', // 通信メソッド
+		headers: {
+			'Content-Type': 'application/json' // JSON形式のデータのヘッダー
+		},
+		body: JSON.stringify(data) // JSON形式のデータ
+	})
+}
 //Socket処理
 io.on("connection", (socket: any) => {
   socket.on("login", async (id: any) => {
@@ -101,6 +112,7 @@ io.on("connection", (socket: any) => {
   });
   socket.on("newmsg", (msg: any) => {
     io.emit("newmsg", { "id": createRandomId(), "username": socket.username, "name": socket.name, "img": socket.imgurl, "content": msg })
+    newlog(socket.username , socket.imgurl , msg)
   });
   socket.on("newemoji", (msg: { id: any; moji: any; }) => {
     io.emit("newemoji", { "id": msg.id, "username": socket.username, "moji": msg.moji })
@@ -110,6 +122,7 @@ io.on("connection", (socket: any) => {
   });
   socket.on("newreply", (msg: { msg: any; reply_id: any; }) => {
     io.emit("newreply", { "id": createRandomId(), "username": socket.username, "name": socket.name, "img": socket.imgurl, "content": msg.msg, "reply": msg.reply_id })
+    newlog(socket.username , socket.imgurl , `${msg.reply_id}に返信/${msg.msg}`)
   });
   socket.on("setstatus", (msg: any) => {
     io.emit("setstatus", { "username": socket.username, "content": msg })
