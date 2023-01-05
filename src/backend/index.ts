@@ -35,7 +35,7 @@ app.use(express.static(static_path));
 app.use('/', require("./router/front.js"));
 app.use("/acount", require("./router/acount.js"))
 app.use("/api", require("./router/api.js"))
-app.use("/u", require("./router/users.js"))
+app.use("/users", require("./router/users.js"))
 
 //function
 function createRandomId() {

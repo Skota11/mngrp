@@ -37,3 +37,4 @@ router.get("/:name", (req, ex_res) => {
                     ex_res.render(process.cwd() + '/src/public/users.ejs', data);
                 });
                 })
+                module.exports = router;
