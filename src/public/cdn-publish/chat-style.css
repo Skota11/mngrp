@@ -220,7 +220,8 @@ ul {
   display: none;
 }
 
-.info {
+.info a{
+  text-decoration: none;
   color: black;
 }
 
