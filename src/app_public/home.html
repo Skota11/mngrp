@@ -9,7 +9,7 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap');
     </style>
-    <link rel="stylesheet" href="https://cdn.mngrp.skota11.com/home-style.css">
+    <link rel="stylesheet" href="https://cdn.app.mngrp.skota11.com/home-style.css">
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/Modaal/0.4.4/css/modaal.min.css">
 </head>
@@ -17,12 +17,11 @@
 <body>
     <div style="display: none;" id="main">
         <main>
-    <h1>ホーム</h1>
     <div class="top-user">
         <div id="user_name">
             <p><img id="myicon" src="" alt="myicon"></p>
         <p><span id="my-displayname"></span><span id="my-name"></span></p>
-        <p><a href="/acount/settings" class="btn">アカウント設定</a></p>
+        <p><a href="/app/acount/settings" class="btn">アカウント設定</a></p>
         <p>(<a href="#info-1" class="info">名前の変更</a>)</p>
         </div>
         <div id="user_info">
@@ -34,7 +33,6 @@
     <h2>リアルタイムチャット</h2>
     <p>参加中のメンバー<button onclick="reloadlogin()"><i class="fa-solid fa-rotate-right"></i></button></p>
     <p id="chat-nowlogin">|</p>
-    <p><a href="/chat" class="btn">チャットへ行く</a></p>
     </div>
     <div id="load_sc">
         <div id="loading">
@@ -64,7 +62,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Modaal/0.4.4/js/modaal.min.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="https://kit.fontawesome.com/a60744fb42.js" crossorigin="anonymous"></script>
-<script src="https://cdn.mngrp.skota11.com/home.js"></script>
+<script src="https://cdn.app.mngrp.skota11.com/home.js"></script>
 <script>
     $(".info").modaal({
         overlay_close: true,//モーダル背景クリック時に閉じるか
