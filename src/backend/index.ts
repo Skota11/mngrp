@@ -33,6 +33,7 @@ let static_path = process.cwd() + '/src/public'
 app.use(express.static(static_path));
 //router
 app.use('/', require("./router/front.js"));
+app.use('/app', require("./router/app_front.js"));
 app.use("/acount", require("./router/acount.js"))
 app.use("/api", require("./router/api.js"))
 app.use("/users", require("./router/users.js"))

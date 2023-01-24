@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Mongrop - <%= username %></title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap');
+    </style>
+    <link rel="stylesheet" href="https://cdn.mngrp.skota11.com/home-style.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/Modaal/0.4.4/css/modaal.min.css">
+</head>
+
+<body>
+    <div id="main">
+        <main>
+    <h1><%= username %> / <%= name %></h1>
+    <div class="top-user">
+        <div id="user_name">
+            <p><img id="myicon" src="<%= imageurl %>" alt="myicon"></p>
+        <p><span id="my-displayname"><%= name %></span><span id="my-name">@<%= username %></span></p>
+        </div>
+        <div id="user_info">
+            <textarea onchange="info_btn()" id="user_info_textarea" readonly cols="30" rows="5"><%= info %></textarea>
+        </div>
+    </div>
+    <hr>
+    <h2>コメント</h2>
+    <p>開発中...</p>
+    <p><a href="/chat" class="btn">チャットへ行く</a></p>
+</main>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Modaal/0.4.4/js/modaal.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://kit.fontawesome.com/a60744fb42.js" crossorigin="anonymous"></script>
+
+</html>
