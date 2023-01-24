@@ -32,9 +32,6 @@ p {
 }
 
 .online-member {
-  float: right;
-  width: 20%;
-  height: 100vh;
   background-color: gainsboro;
 }
 
