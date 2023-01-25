@@ -411,7 +411,11 @@ socket.on("destoryemoji", (msg) => {
 setInterval(check_height, 500);
 function check_height() {
   document.getElementById("msglist").style.height =
-    window.innerHeight - document.getElementById("msgsend").offsetHeight + "px";
+    window.innerHeight -
+    document.getElementById("msgsend").offsetHeight +
+    "px" -
+    document.getElementById("side").offsetHeight +
+    "px";
 }
 //<=高さ調整
 setInterval(check_mamber, 1000);
