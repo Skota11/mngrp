@@ -1,4 +1,5 @@
 import express from 'express';
+import fetch from 'node-fetch';
 require('dotenv').config();
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser');
