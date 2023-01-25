@@ -1,71 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Modaal/0.4.4/css/modaal.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.mngrp.skota11.com/chat-style.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap");
+    </style>
+    <title>Mongrop - Chat</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Modaal/0.4.4/css/modaal.min.css">
-  <link rel="stylesheet" href="https://cdn.mngrp.skota11.com/chat-style.css">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap');
-  </style>
-  <title>Mongrop - Chat</title>
-</head>
+  <body>
+    <div id="side" class="online-member">
+      <p>サイドメニュー</p>
 
-<body>
-  <div id="side" class="online-member">
-    <p>サイドメニュー</p>
+      <p>-----</p>
+      <div id="reply-menu">-右クリック</div>
+      <p>-----</p>
+      <div id="setting">
+        <ul class="accordion-area">
+          <li>
+            <!--li ~ /li までが一つのアコーディオン-->
+            <section>
+              <h3 class="title">オンラインメンバー</h3>
+              <div class="box">
+                <div id="online">読み込み中</div>
+              </div>
+            </section>
+          </li>
 
-    <p>-----</p>
-    <div id="reply-menu">-右クリック</div>
-    <p>-----</p>
-    <div id="setting">
-      <ul class="accordion-area">
-        <li>
-          <!--li ~ /li までが一つのアコーディオン-->
-          <section>
-            <h3 class="title">オンラインメンバー</h3>
-            <div class="box">
-              <div id="online">読み込み中</div>
-            </div>
-          </section>
-        </li>
-
-        <li>
-          <section>
-            <h3 class="title">設定</h3>
-            <div class="box">
-              <p>スクロール<input checked type="checkbox" id="scroll_check"></p>
-              <p><a href="/acount/settings" rel="noopener noreferrer">アカウント設定</a></p>
-            </div>
-          </section>
-        </li>
-      </ul>
+          <li>
+            <section>
+              <h3 class="title">設定</h3>
+              <div class="box">
+                <p>
+                  スクロール<input checked type="checkbox" id="scroll_check" />
+                </p>
+                <p>
+                  <a href="/acount/settings" rel="noopener noreferrer"
+                    >アカウント設定</a
+                  >
+                </p>
+              </div>
+            </section>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
     <div id="msglist">
       <div id="header">
         <h2><a href="/home" rel="noopener noreferrer">Mongrop</a></h2>
         <span id="nowlogin">読み込み中</span>
       </div>
     </div>
-      <div id="msgsend">
-        <p>メッセージ</p>
-        <div id="reply-show"></div>
-        <div id="cantsend"></div>
-        <div id="input_box">
-          <div id="content" contenteditable="true"></div>
-        </div>
-        <div id="typenow"></div>
+    <div id="msgsend">
+      <p>メッセージ</p>
+      <div id="reply-show"></div>
+      <div id="cantsend"></div>
+      <div id="input_box">
+        <div id="content" contenteditable="true"></div>
       </div>
-      <script src="https://kit.fontawesome.com/a60744fb42.js" crossorigin="anonymous"></script>
-      <script src="/socket.io/socket.io.js"></script>
-      <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-      <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
-      <script src="https://cdn.mngrp.skota11.com/chat.js"></script>
-</body>
-
+      <div id="typenow"></div>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/a60744fb42.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.mngrp.skota11.com/chat.js"></script>
+  </body>
 </html>
