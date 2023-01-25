@@ -412,8 +412,7 @@ setInterval(check_height, 500);
 function check_height() {
   document.getElementById("msglist").style.height =
     window.innerHeight -
-    document.getElementById("msgsend").offsetHeight +
-    "px" -
+    document.getElementById("msgsend").offsetHeight -
     document.getElementById("side").offsetHeight +
     "px";
 }
