@@ -1,157 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap');
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap");
     </style>
     <style>
-        * {
-            font-family: 'Noto Sans JP', sans-serif;
-        }
+      * {
+        font-family: "Noto Sans JP", sans-serif;
+      }
 
-        main {
-            text-align: center;
-        }
+      main {
+        text-align: center;
+      }
 
-        #icon {
-            border-radius: 10px;
-            border: 3px solid #636363;
-            height: 3em;
-            width: 3em;
-            object-fit: cover;
-            margin: auto;
-        }
+      #icon {
+        border-radius: 10px;
+        border: 3px solid #636363;
+        height: 3em;
+        width: 3em;
+        object-fit: cover;
+        margin: auto;
+      }
 
-        .hide-area {
-            display: none;
-        }
+      .hide-area {
+        display: none;
+      }
     </style>
-    <link rel="stylesheet" type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/Modaal/0.4.4/css/modaal.min.css">
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Modaal/0.4.4/css/modaal.min.css"
+    />
     <title>Mongrop - AcountSettings</title>
-</head>
+  </head>
 
-<body>
-    <p><a href="/home" rel="noopener noreferrer">Homeへ</a></p>
+  <body>
+    <p><a href="/app/home" rel="noopener noreferrer">Homeへ</a></p>
     <h1>Settings</h1>
     <main>
-        <div id="profile">
-            <img id="icon" width="" src="" alt="読み込み中">
-            <h2 id="name">読み込み中</h2>
-            <p id="username">読み込み中</p>
-        </div>
-        <hr>
-        <h3>-Setting-</h3>
-        <p><a href="#info-1" class="info">名前の変更</a></p>
-        <p><a href="#info-2" class="info">画像の変更</a></p>
-        <section id="info-1" class="hide-area">
-            <h2>名前の変更</h2>
-            <p><input id="changename" type="text"><button onclick="changename()">名前を変更</button></p>
-            <p id="res-1"></p>
-        </section>
-        <section id="info-2" class="hide-area">
-            <h2>画像を変更</h2>
-            <p>申し訳ありません。画像を<a target="_blank" rel="noopener noreferrer"
-                    href="https://file-up.skota11.repl.co/upload">こちら</a>にてアップロードしたあと、下のボックスにリンクを入力してください。</p>
-            <p><input id="changeimg" type="text"><button onclick="changeimg()">画像を変更</button></p>
-            <p id="res-2"></p>
-        </section>
+      <div id="profile">
+        <img id="icon" width="" src="" alt="読み込み中" />
+        <h2 id="name">読み込み中</h2>
+        <p id="username">読み込み中</p>
+      </div>
+      <hr />
+      <h3>-Setting-</h3>
+      <p><a href="#info-1" class="info">名前の変更</a></p>
+      <p><a href="#info-2" class="info">画像の変更</a></p>
+      <section id="info-1" class="hide-area">
+        <h2>名前の変更</h2>
+        <p>
+          <input id="changename" type="text" /><button onclick="changename()">
+            名前を変更
+          </button>
+        </p>
+        <p id="res-1"></p>
+      </section>
+      <section id="info-2" class="hide-area">
+        <h2>画像を変更</h2>
+        <p>
+          申し訳ありません。画像を<a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://file-up.skota11.repl.co/upload"
+            >こちら</a
+          >にてアップロードしたあと、下のボックスにリンクを入力してください。
+        </p>
+        <p>
+          <input id="changeimg" type="text" /><button onclick="changeimg()">
+            画像を変更
+          </button>
+        </p>
+        <p id="res-2"></p>
+      </section>
     </main>
-</body>
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Modaal/0.4.4/js/modaal.min.js"></script>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<script>
+  </body>
+  <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"
+  ></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Modaal/0.4.4/js/modaal.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script>
     function getcookie(name) {
-        var cookies = document.cookie; //全てのcookieを取り出して
-        var cookiesArray = cookies.split(';'); // ;で分割し配列に
-        for (var c of cookiesArray) { //一つ一つ取り出して
-            var cArray = c.split('='); //さらに=で分割して配列に
-            if (cArray[0] == name) { // 取り出したいkeyと合致したら
-                return cArray[1]  // [key,value] 
-            }
+      var cookies = document.cookie; //全てのcookieを取り出して
+      var cookiesArray = cookies.split(";"); // ;で分割し配列に
+      for (var c of cookiesArray) {
+        //一つ一つ取り出して
+        var cArray = c.split("="); //さらに=で分割して配列に
+        if (cArray[0] == name) {
+          // 取り出したいkeyと合致したら
+          return cArray[1]; // [key,value]
         }
+      }
     }
     function changename() {
-        const newname = document.getElementById("changename").value
-        console.log(newname)
-        const param = {
-            method: "POST",
-            headers: {
-                Accept: 'application/json',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                name: newname
-            })
-        }
-        fetch("/api/acount/changename", param).then((res) => {
-            res.text().then((text) => {
-                swal("名前を変更しました","","success");
-                fetch("/api/acount").then((res) => {
-                    res.json().then((text) => {
-                        document.getElementById("name").textContent = `${text.name}`
-                        document.getElementById("username").textContent = `@${text.username}`
-                        document.getElementById("icon").src = `${text.imageurl}`
-                    })
-                })
-            })
-        })
+      const newname = document.getElementById("changename").value;
+      console.log(newname);
+      const param = {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: newname,
+        }),
+      };
+      fetch("/api/acount/changename", param).then((res) => {
+        res.text().then((text) => {
+          swal("名前を変更しました", "", "success");
+          fetch("/api/acount").then((res) => {
+            res.json().then((text) => {
+              document.getElementById("name").textContent = `${text.name}`;
+              document.getElementById(
+                "username"
+              ).textContent = `@${text.username}`;
+              document.getElementById("icon").src = `${text.imageurl}`;
+            });
+          });
+        });
+      });
     }
     function changeimg() {
-        const newname = document.getElementById("changeimg").value
-        const param = {
-            method: "POST",
-            headers: {
-                Accept: 'application/json',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                image: newname
-            })
-        }
-        fetch("/api/acount/changeimage", param).then((res) => {
-            res.text().then((text) => {
-                swal("画像を変更しました","","success");
-                fetch("/api/acount").then((res) => {
-                    res.json().then((text) => {
-                        document.getElementById("name").textContent = `${text.name}`
-                        document.getElementById("username").textContent = `@${text.username}`
-                        document.getElementById("icon").src = `${text.imageurl}`
-                    })
-                })
-            })
-        })
+      const newname = document.getElementById("changeimg").value;
+      const param = {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          image: newname,
+        }),
+      };
+      fetch("/api/acount/changeimage", param).then((res) => {
+        res.text().then((text) => {
+          swal("画像を変更しました", "", "success");
+          fetch("/api/acount").then((res) => {
+            res.json().then((text) => {
+              document.getElementById("name").textContent = `${text.name}`;
+              document.getElementById(
+                "username"
+              ).textContent = `@${text.username}`;
+              document.getElementById("icon").src = `${text.imageurl}`;
+            });
+          });
+        });
+      });
     }
-</script>
-<script>
+  </script>
+  <script>
     if (getcookie("ac_") == null) {
-        location.href = "/login?q="
+      location.href = "/login?q=";
     }
     //moddal
     //1. テキストを含む一般的なモーダル
     $(".info").modaal({
-        overlay_close: true,//モーダル背景クリック時に閉じるか
-        before_open: function () {// モーダルが開く前に行う動作
-            $('html').css('overflow-y', 'hidden');/*縦スクロールバーを出さない*/
-        },
-        after_close: function () {// モーダルが閉じた後に行う動作
-            $('html').css('overflow-y', 'scroll');/*縦スクロールバーを出す*/
-        }
+      overlay_close: true, //モーダル背景クリック時に閉じるか
+      before_open: function () {
+        // モーダルが開く前に行う動作
+        $("html").css("overflow-y", "hidden"); /*縦スクロールバーを出さない*/
+      },
+      after_close: function () {
+        // モーダルが閉じた後に行う動作
+        $("html").css("overflow-y", "scroll"); /*縦スクロールバーを出す*/
+      },
     });
     //
     fetch("/api/acount").then((res) => {
-        res.json().then((text) => {
-            document.getElementById("name").textContent = `${text.name}`
-            document.getElementById("username").textContent = `@${text.username}`
-            document.getElementById("icon").src = `${text.imageurl}`
-        })
-    })
-</script>
-
+      res.json().then((text) => {
+        document.getElementById("name").textContent = `${text.name}`;
+        document.getElementById("username").textContent = `@${text.username}`;
+        document.getElementById("icon").src = `${text.imageurl}`;
+      });
+    });
+  </script>
 </html>

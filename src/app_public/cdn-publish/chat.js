@@ -436,7 +436,7 @@ function check_mamber() {
         const list = document.querySelector("#online");
         list.innerHTML = "";
         for (var i = 0; i < content.length; i++) {
-          const content_div = document.createElement("div");
+          const content_div = document.createElement("span");
           const list = document.querySelector("#online");
           content_div.innerHTML = `<img src=""><span class="status_name">${content[i]}</span>/<span class="status" id="${content[i]}"></span>|`;
           list.appendChild(content_div, list.firstChild);
