@@ -8,6 +8,7 @@ const crypto = require('crypto');
 const PORT = process.env.PORT || 3030;
 const db_host = process.env.host;
 const db_pwd = process.env.password;
+const dis_hook = process.env.hook;
 const app = express();
 const { Client } = require("pg");
 const client = new Client({
@@ -59,13 +60,15 @@ app.get("/api/chat/nowlogin", (req, ex_res) => {
 //log処理
 function newlog(name:string , imgurl:string , content:string) {
   const data = {username: name , avatar_url:imgurl , content:content}
-  fetch('https://discord.com/api/webhooks/1060499653562482708/HkcSsAw5dwKQ1QqTUUoGElOj9zNT87pQu6Rn6QXdTMDXa5SfTUZcFj22GUnSESDlPDEo"', {  // 送信先URL
-		method: 'post', // 通信メソッド
-		headers: {
-			'Content-Type': 'application/json' // JSON形式のデータのヘッダー
-		},
-		body: JSON.stringify(data) // JSON形式のデータ
-	})
+  {dis_hook &&
+    fetch(dis_hook.toString(), {  // 送信先URL
+      method: 'post', // 通信メソッド
+      headers: {
+        'Content-Type': 'application/json' // JSON形式のデータのヘッダー
+      },
+      body: JSON.stringify(data) // JSON形式のデータ
+    }) 
+  }
 }
 //Socket処理
 io.on("connection", (socket: any) => {
