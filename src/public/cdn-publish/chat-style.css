@@ -113,6 +113,7 @@ p {
 
 .content {
   font-size: 1em;
+  white-space: nowrap;
 }
 
 ul {
