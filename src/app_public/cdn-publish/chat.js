@@ -417,7 +417,7 @@ function check_height() {
     "px";
 }
 //<=高さ調整
-setInterval(check_mamber, 1000);
+setInterval(check_mamber, 2000);
 function check_mamber() {
   fetch("/api/chat/nowlogin").then((res) => {
     res.json().then((text) => {

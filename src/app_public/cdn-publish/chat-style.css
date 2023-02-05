@@ -77,7 +77,7 @@ p {
 }
 
 .msg {
-  margin-left: 15px;
+  margin-left: 1em;
   transition: background-color .3s;
   margin-bottom: 1em;
 }
@@ -110,8 +110,8 @@ p {
 
 .content {
   font-size: 1em;
+  white-space: nowrap;
 }
-
 ul {
   margin: 0;
   padding: 0;
@@ -120,7 +120,7 @@ ul {
 }
 
 .msg_ul {
-  padding-left: 40px;
+  padding-left: 1em;
 }
 
 .msg_ul li {
@@ -223,12 +223,12 @@ ul {
 }
 
 .userimg {
-  border-radius: 10px;
-  border: 3px solid #636363;
-  height: 3em;
-  width: 3em;
-  object-fit: cover;
-  margin: auto;
+  border-radius: 5px;
+    border: 3px solid #636363;
+    height: 2em;
+    width: 2em;
+    object-fit: cover;
+    margin: auto;
 }
 #reply-menu {
   width: auto;
